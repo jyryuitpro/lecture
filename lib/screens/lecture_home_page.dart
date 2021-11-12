@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:line_icons/line_icons.dart';
 
 class LectureHomePage extends StatefulWidget {
@@ -107,7 +108,7 @@ class _LectureHomePageState extends State<LectureHomePage> {
             left: 0,
             top: MediaQuery.of(context).size.height * 0.03,
             right: 0,
-            bottom: 84,
+            bottom: 64,
             child: Column(
               children: [
                 // Expanded는 Flex 속성값을 설정 할 수 있어서 Widget의 크기를 비율로 조정할 수 있다.
@@ -145,8 +146,8 @@ class _LectureHomePageState extends State<LectureHomePage> {
                           children: const [
                             CircleAvatar(
                               radius: 28,
-                              backgroundImage: AssetImage(
-                                  'assets/images/codepretation.png'),
+                              backgroundImage:
+                                  AssetImage('assets/images/codepretation.png'),
                             ),
                             Positioned(
                               right: 0,
@@ -174,26 +175,146 @@ class _LectureHomePageState extends State<LectureHomePage> {
                     child: const Center(
                       child: TextField(
                         decoration: InputDecoration(
-                          icon: Icon(Icons.search),
-                          hintText: 'Search group by name',
-                          border: InputBorder.none,
-                          hintStyle: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                            fontWeight: FontWeight.normal,
-                          )
-                        ),
+                            icon: Icon(Icons.search),
+                            hintText: 'Search group by name',
+                            border: InputBorder.none,
+                            hintStyle: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                            )),
                       ),
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 2,
-                  child: Placeholder(),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      spacing: 24,
+                      runSpacing: 8,
+                      runAlignment: WrapAlignment.center,
+                      alignment: WrapAlignment.start,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            child: Text(
+                              'Upcoming',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            child: Text(
+                              'Group',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            child: Text(
+                              'Today',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            child: Text(
+                              'Anytime',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            child: Text(
+                              'Personal',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            child: Text(
+                              '10 + days',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
                   flex: 10,
-                  child: Placeholder(),
+                  child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemCount: 8,
+                    itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 240,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Column(
+                            children: [
+
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },),
                 ),
               ],
             ),
