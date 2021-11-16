@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 
 class LectureHomePage extends StatefulWidget {
@@ -15,6 +16,7 @@ class _LectureHomePageState extends State<LectureHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Positioned(
@@ -204,7 +206,8 @@ class _LectureHomePageState extends State<LectureHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 11, vertical: 6),
                             child: Text(
                               'Upcoming',
                               style: TextStyle(
@@ -219,7 +222,8 @@ class _LectureHomePageState extends State<LectureHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 11, vertical: 6),
                             child: Text(
                               'Group',
                               style: TextStyle(
@@ -234,7 +238,8 @@ class _LectureHomePageState extends State<LectureHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 11, vertical: 6),
                             child: Text(
                               'Today',
                               style: TextStyle(
@@ -249,7 +254,8 @@ class _LectureHomePageState extends State<LectureHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 11, vertical: 6),
                             child: Text(
                               'Anytime',
                               style: TextStyle(
@@ -264,7 +270,8 @@ class _LectureHomePageState extends State<LectureHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 11, vertical: 6),
                             child: Text(
                               'Personal',
                               style: TextStyle(
@@ -279,7 +286,8 @@ class _LectureHomePageState extends State<LectureHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 11, vertical: 6),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 11, vertical: 6),
                             child: Text(
                               '10 + days',
                               style: TextStyle(
@@ -298,23 +306,239 @@ class _LectureHomePageState extends State<LectureHomePage> {
                     padding: EdgeInsets.zero,
                     itemCount: 8,
                     itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 240,
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Column(
-                            children: [
-
-                            ],
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          height: 240,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  flex: 3,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          '18:30',
+                                          style: GoogleFonts.montserrat(
+                                            fontSize: 36,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 48,
+                                            vertical: 4,
+                                          ),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text('Monday'),
+                                              Text(
+                                                'Today',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Spacer(),
+                                        Text.rich(
+                                          TextSpan(children: [
+                                            TextSpan(
+                                              text: '2',
+                                              style: TextStyle(
+                                                fontSize: 24,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: '/12',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                          ]),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.blue,
+                                            borderRadius:
+                                                BorderRadius.circular(4),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 4,
+                                              vertical: 4,
+                                            ),
+                                            child: Text(
+                                              'Upcoming',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.blue,
+                                            borderRadius:
+                                                BorderRadius.circular(4),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 4,
+                                              vertical: 4,
+                                            ),
+                                            child: Text(
+                                              'Group',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.blue,
+                                            borderRadius:
+                                                BorderRadius.circular(4),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 4,
+                                              vertical: 4,
+                                            ),
+                                            child: Text(
+                                              'Today',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 16,
+                                      top: 8,
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Our Brain And Empathy',
+                                          style: GoogleFonts.montserrat(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Text(
+                                          'OP group',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(16, 4, 16, 8),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: Stack(
+                                            children: [
+                                              Positioned(
+                                                child: CircleAvatar(
+                                                  backgroundImage: NetworkImage(
+                                                      'https://i.pravatar.cc/300'),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 30,
+                                                child: CircleAvatar(
+                                                  backgroundImage: NetworkImage(
+                                                      'https://i.pravatar.cc/300'),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 60,
+                                                child: CircleAvatar(
+                                                  backgroundImage: NetworkImage(
+                                                      'https://i.pravatar.cc/300'),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 90,
+                                                child: CircleAvatar(
+                                                  backgroundImage: NetworkImage(
+                                                      'https://i.pravatar.cc/300'),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Align(
+                                            alignment: Alignment.centerRight,
+                                            child: Text(
+                                              '18:30 - 20:00',
+                                              style: GoogleFonts.montserrat(
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
